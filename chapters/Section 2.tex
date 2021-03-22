@@ -1,0 +1,35 @@
+\section{Simulation Design}
+\subsection*{General Simulation for estimating HTEs}
+\begin{enumerate}
+    \item $n$ and $d$: Both low and high dimensional data.
+    \item Covariates $X$:
+    \begin{itemize}
+        \item Independent: $X \sim N(0,I_{p\times p})$
+        \item Dependent:  $X \sim N(0,\Sigma)$
+    \end{itemize}
+    \item The propensity function $\pi(X)$ of treatment $W$, the mean effect function $\mu(X)$ and the treatment effect function $\tau(X)$.
+    \begin{itemize}
+        \item Propensity function $\pi(X)$ is linear in the sense of logistic function:
+        \begin{equation*}
+            W \sim Bernouli(\pi(X)) \mbox{ where } \pi(X) = \frac{1}{1+e^{X\beta_{w}+\epsilon}} \mbox{ and } \epsilon \sim N(0,1)
+        \end{equation*}
+        Consider two cases of $\beta_w$ (dense and sparse).
+        \item Mean effect function $\mu(x)$ is linear: $\mu(x) = X\beta$ or non-linear. Consider two cases of $\beta$ (dense and sparse).
+        \item Treatment effect function $\tau(X)$ is linear: $\mu(x) = X\gamma$ or non-linear. Consider some specific cases of $\gamma$. Why in Wager and Athey (2017), they set: "$\tau$ to be a smooth function supported on the first two features: 
+        \begin{equation*}
+            \tau(X) = \zeta(X_1)\zeta(X_2), \hspace{5mm} \zeta(X) = 1 + \frac{1}{1+e^{-20(x-1/3)}}
+        \end{equation*}
+    \end{itemize}
+    \item The conditional variance of $Y$ given $X$ and $W$ is: $\sigma_Y^2 = 1$ (noise level). Then:
+    \begin{equation*}
+        Y \sim N(\mu(X) + (W-0.5)\tau(x), \sigma_Y^2)
+    \end{equation*}
+\end{enumerate}
+
+\textbf{Note:}
+
+In Wager and Athey (2017): $X \sim U([0,1]^p)$; $\mu(X) = 0$ ($\beta = 0$); $\pi(X) = 0.5$ ($\beta_w = 0$)
+
+In Athey and Imben (2016): $p = 20$; $\mu(X) = \frac{1}{2}\Sigma_{p=1}^{4}x_p + \Sigma_{p=5}^{8}x_p$; $\pi(X) = 0.5$; 
+
+$\tau(x) = \Sigma_{p=1}^{4}1\{x_p>0\}.x_p$

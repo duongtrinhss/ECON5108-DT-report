@@ -1,0 +1,57 @@
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[ht]
+\caption{Simulation Setup I - balanced case, no cofounding, nonlinear CATE (see R code)}
+\centering
+\begin{tabular}{lcccc}
+    &&&&\\
+      &iters = 25\\
+   &&&&\\
+  \hline
+d & MSE\_PostLasso & MSE\_CausalTree & MSE\_CausalForest & MSE\_XLearner \\ 
+  \hline
+2 & 0.2316 & 0.0643 & 0.0221 & 0.0269 \\ 
+  4 & 0.2318 & 0.0842 & 0.0297 & 0.0247 \\ 
+  6 & 0.2323 & 0.0948 & 0.0312 & 0.0269 \\ 
+  8 & 0.2322 & 0.0911 & 0.0338 & 0.0315 \\ 
+   \hline
+   &&&&\\
+   \hline
+d & Bias\_PostLasso & Bias\_CausalTree & Bias\_CausalForest & Bias\_XLearner \\ 
+  \hline
+2 & 0.3774 & 0.0628 & 0.0939 & 0.0334 \\ 
+  4 & 0.3776 & 0.0689 & 0.1115 & 0.0656 \\ 
+  6 & 0.3783 & 0.1164 & 0.1252 & 0.0962 \\ 
+  8 & 0.3778 & 0.1145 & 0.1229 & 0.1042 \\ 
+   \hline
+   &&&&\\
+   \hline
+d & Coverage\_PostLasso & Coverage\_CausalTree & Coverage\_CausalForest & Coverage\_XLearner \\ 
+  \hline
+2 & 0.2095 & 0.9457 & 0.7568 & 0.9454 \\ 
+  4 & 0.2120 & 0.9397 & 0.7018 & 0.9054 \\ 
+  6 & 0.2114 & 0.9102 & 0.6146 & 0.8076 \\ 
+  8 & 0.2186 & 0.9112 & 0.6494 & 0.7910 \\ 
+   \hline
+   &&&&\\
+      &iters = 3\\
+   &&&&\\
+   \hline
+d & MSE\_PostLasso & MSE\_CausalTree & MSE\_CausalForest & MSE\_XLearner \\ 
+  \hline
+2 & 0.2231 & 0.0728 & 0.0226 & 0.0273 \\ 
+   \hline
+   &&&&\\
+   \hline
+d & Bias\_PostLasso & Bias\_CausalTree & Bias\_CausalForest & Bias\_XLearner \\  
+  \hline
+2 & 0.2167 & 0.1243 & 0.0676 & 0.0734 \\ 
+   \hline
+   &&&&\\
+\hline
+d & Coverage\_PostLasso & Coverage\_CausalTree & Coverage\_CausalForest & Coverage\_XLearner \\
+  \hline
+2 & 0.9267 & 0.9793 & 0.9830 & 0.9870 \\ 
+    \hline
+\end{tabular}
+\end{table}

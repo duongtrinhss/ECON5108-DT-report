@@ -1,0 +1,58 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[margin=1in]{geometry}
+\linespread{1.3}
+%\setlength{\parskip}{0.8em}
+\usepackage{natbib}
+\bibliographystyle{abbrvnat}
+\usepackage{mathtools}  % for paired delimiters 
+\usepackage{mathrsfs}   % for script capitals
+\usepackage{dsfont}     % for mathds
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{tcolorbox}
+\usepackage{lmodern}
+
+\usepackage{hyperref}
+
+
+\usepackage{tabularx, booktabs}   % for table
+\usepackage{pdflscape}  % for lanscape
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+\begin{document}
+\include{TitlePage}
+
+% TABLE OF CONTENT PAGE
+\newpage
+\thispagestyle{empty}
+\setcounter{page}{0}
+\vspace*{3cm}
+\tableofcontents
+\addtocontents{toc}{\protect\enlargethispage{\baselineskip}}
+\clearpage
+
+% MAIN BODY
+\clearpage
+\input{chapters/Section 1}
+\clearpage
+\input{chapters/Section 2}
+\clearpage
+\input{chapters/Section 3}
+
+\clearpage
+\citep{rafkin2020guidance, bursztyn2020misinformation, chernozhukov2020causal,
+gentzkow2019text}
+\citep{athey2018impact,athey2019machine,knaus2018machine,kuenzel2019heterogeneous,grimmer2017estimating}
+
+
+
+% REFERENCE
+\newpage
+\bibliography{reference}
+
+\end{document}
