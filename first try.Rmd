@@ -1,0 +1,16 @@
+---
+title: "R Notebook"
+output: 
+  pdf_document:
+    keep_tex: true
+---
+
+
+```{r global_options, include=TRUE}
+knitr::opts_chunk$set(fig.width=12, fig.height=8, fig.path='Figs/',
+                      echo=FALSE, warning=FALSE, message=FALSE)
+plot(pressure)
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
